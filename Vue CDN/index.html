@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue js</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+
+  <body>
+    <div id="vue-app">
+      <h1>1. Using different types of data binding</h1>
+      <h3>{{title}}</h3>
+      <p>{{ greet('afternoon') }}</p>
+      <a v-bind:href="website">Google</a>
+
+      <input type="text" v-bind:value="name">
+      <br>
+      <p v-html="websiteTarget"></p>
+      <hr>
+    </div>
+
+    <div id="vue-app2">
+
+      <h1>2. Working with events and event modifiers</h1>
+      <button v-on:click.once="add(1)">Add</button>
+      <button v-on:click="subtract(1)">Subtract</button>
+      <button v-on:dblclick="add(10)">Add 10 by db click</button>
+      <button v-on:dblclick="subtract(10)">Subtact 10 by db click</button>
+      <p>My age is {{age}}</p>
+      <a href="http://www.google.com"></a>
+      <div id="canvas" v-on:mousemove="updateXY">
+        {{X}} , {{Y}}
+      </div>
+    </div>
+    <hr>
+    <div id="vue-app3">
+      <h1>3. Keyboard Events and modifiers for them</h1>
+      <label for="">Name:</label>
+      <input type="text" v-on:keyup.alt.enter="logName">
+      <label for="">Age:</label>
+      <input type="text" v-on:keyup="logAge">
+    </div>
+    <br>
+    <hr>
+
+    <div id="vue-app4">
+      <h1>4. Two way data bindings</h1>
+      <p>Instead of taking inputs in the vue methods and update the 
+        data in vue instance we use two way data binding by v-model to bind 
+        the input to a data in vue instance 
+      </p>
+      <label for="">Name</label>
+      <input type="text" v-model="name">
+      <label for="">Age</label>
+      <input type="text" v-model="age">
+      <div>{{ name }}</div>
+      <div>{{ age }}</div>
+    </div>
+
+    <br>
+    <hr>
+    <div id="vue-app5">
+      <h1>5. Computed properties</h1>
+      <button v-on:click="a++">add to A</button>
+      <button v-on:click="b++">add to B</button>
+      <p>A = {{a}}</p>
+      <p>B = {{b}}</p>
+      <p>age + A = {{addToA}}</p>
+      <p>age + B = {{addToB}}</p>
+      <p>If we use methods instead of computed every time A or B change, both
+        functions are going to run, but with computed properties only the function that has 
+        a related variable is going to change 
+      </p>
+    </div>
+    <br>
+    <hr>
+    <div id="vue-app6">
+      <h1>6. Dynamic CSS for classes</h1>
+      <h3>Example 1</h3>
+      <div v-on:click="available = !available" v-bind:class="{available: available}">
+        <span>Ryu</span>
+      </div>
+
+      <h3>Example 2 using computed properties for returning class object</h3>
+      <button v-on:click="available = !available">toggle available</button>
+      <button v-on:click="nearby = !nearby">toggle nearby</button>
+      <div v-bind:class="compClasses">
+        <span>Ryu</span>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <div id="vue-app7">
+      <h1>7. Conditionals for showing a element</h1>
+
+      <button v-on:click="error = !error">Toggle error</button>
+      <button v-on:click="success = !success">Toggle succes</button>
+      <p v-if="error"> There has been a error</p>
+      <p v-else-if="success">Success</p>
+      <p v-show="error"> There has been a error but only display to none</p>
+    </div>
+    <br>
+    <hr>
+    <div id="vue-app8">
+      
+      <ul>
+        <li v-for="(character, index) in characters">{{character}} is {{index}} element</li>
+      </ul>
+    </div>
+    <br>
+    <hr>
+
+    <h1>8. Multiple vue instances</h1>
+    <div id="vue-app9">
+      <p>{{ title }}</p>
+    </div>
+
+    <div id="vue-app10">
+      <button v-on:click="changeOneTitle">change the one instance title</button>
+      <p>{{ title }}</p>
+    </div>
+    <br>
+    <hr>
+    <h1>9. Components</h1>
+    <p>in components data is function that return a object
+      thats because every instance have it's own version of data
+    </p>
+    <div id="vue-app11">
+      <h2>Vue app one</h2>
+      <greeting></greeting>
+    </div>
+
+    <div id="vue-app12">
+      <h2>Vue app two</h2>
+      <greeting></greeting>
+      
+    </div>
+
+    <br>
+    <hr>
+    <h1>Introduction to refs to use virtual DOM</h1>
+    <div id="vue-app13">
+      <input type="text" ref="input">
+      
+      <p ref="pTag">This is the p tag</p>
+      <button v-on:click="readRefs">Submit</button>
+    </div>
+    
+    <!--<script src="1-vue instance/app.js"></script> -->
+    <!--<script src="2-data and methods/app.js"></script> -->
+    <script src="3-data binding/app.js"></script>
+    <script src="4-events and event modifiers/app.js"></script>
+    <script src="5-keyboard events/app.js"></script>
+    <script src="6-two way data binding/app.js"></script>
+    <script src="7-computed properties/app.js"></script>
+    <script src="8-dynamic CSS/app.js"></script>
+    <script src="9-conditionals for showing/app.js"></script>
+    <script src="10-looping through lists/app.js"></script>
+    <script src="11-multiple Vue instances/app.js"></script>
+    <script src="12-components/app.js"></script>
+    <script src="13-refs/app.js"></script>
+  </body>
+</html>
