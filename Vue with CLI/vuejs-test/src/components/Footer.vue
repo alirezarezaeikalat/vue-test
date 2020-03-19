@@ -27,7 +27,7 @@ export default {
   
   // this is lifte cycle hook
   created(){
-    bus.$on('titleChanged', (data) => {
+    bus.$on('changeTitle', (data) => {
       this.title = data;
     });
   }

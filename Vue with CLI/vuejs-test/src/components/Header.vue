@@ -33,7 +33,7 @@ export default {
       //this.$emit('changeTitle', 'Vue wizards');
       
       // instead of the element the bus emits the event
-      bus.$emit('titleChanged', 'Vue wizards');
+      bus.$emit('changeTitle', 'Vue wizards');
       this.title = 'Vue wizards';
     }
 
