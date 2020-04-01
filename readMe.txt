@@ -104,7 +104,7 @@ refs, emit and we can access them with $refs, $emit()
     
 14. When we use component tag, every time that we change the component we 
   loose data in that component(we loose data in the object or on the objects
-  forexample data in the form) but we can use keep-alive tag to save the data:
+  for example data in the form) but we can use keep-alive tag to save the data:
   <keep-alive>
     <component is=""></component>
   </keep-alive>
